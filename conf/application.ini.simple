@@ -1,5 +1,7 @@
 ; http://www.laruence.com/manual/yaf.config.optional.html
 [common]
+timezone=UTC
+sandbox=true
 application.directory=APP_PATH "/app/"
 application.bootstrap=APP_PATH "/app/bootstrap/Bootstrap.php"
 

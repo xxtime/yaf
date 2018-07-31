@@ -2,6 +2,9 @@
 
 namespace App\Bootstrap;
 
+
+use Illuminate\Database\Capsule\Manager as Capsule;
+
 class Services
 {
 
@@ -25,7 +28,20 @@ class Services
 
     public function set_db()
     {
-        //dd($this->di->get('config')->db->toArray());
+        $config = $this->di->get('config')->db->toArray();
+        $capsule = new Capsule;
+        $capsule->addConnection([
+            'driver'    => 'mysql',
+            'host'      => $config['host'],
+            'database'  => $config['dbname'],
+            'username'  => $config['user'],
+            'password'  => $config['pass'],
+            'charset'   => $config['chaset'],
+            'prefix'    => $config['prefix'],
+            'collation' => 'utf8mb4_general_ci',
+        ]);
+        $capsule->setAsGlobal();
+        $capsule->bootEloquent();
     }
 
 }

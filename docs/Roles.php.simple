@@ -1,0 +1,12 @@
+<?php
+// 模型Demo
+
+namespace App\Models;
+
+
+use Illuminate\Database\Eloquent\Model;
+
+class Roles extends Model
+{
+
+}
