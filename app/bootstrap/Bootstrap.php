@@ -16,8 +16,8 @@ class Bootstrap extends Yaf_Bootstrap_Abstract
 
     public function _initBootstrap()
     {
-        new \App\Bootstrap\Services($this);
-        new \App\Bootstrap\Setting($this);
+        (new \App\Bootstrap\Services($this))->boot();
+        (new \App\Bootstrap\Setting($this))->boot();
     }
 
     public function _initRoute(Yaf_Dispatcher $dispatcher)

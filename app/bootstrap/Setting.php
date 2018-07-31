@@ -5,14 +5,21 @@ namespace App\Bootstrap;
 class Setting
 {
 
+    private $di;
+
     public function __construct($di)
     {
-        if (isset($di->get('config')->timezone)) {
-            ini_set("date.timezone", $di->get('config')->timezone);
+        $this->di = $di;
+    }
+
+    public function boot()
+    {
+        if (isset($this->di->get('config')->timezone)) {
+            ini_set("date.timezone", $this->di->get('config')->timezone);
         }
 
-        if (isset($di->get('config')->sandbox)) {
-            switch ($di->get('config')->sandbox) {
+        if (isset($this->di->get('config')->sandbox)) {
+            switch ($this->di->get('config')->sandbox) {
                 case true:
                     $whoops = new \Whoops\Run;
                     $whoops->pushHandler(new \Whoops\Handler\PrettyPageHandler);

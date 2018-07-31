@@ -13,10 +13,9 @@ class Services
     public function __construct($di)
     {
         $this->di = $di;
-        $this->loader();
     }
 
-    public function loader()
+    public function boot()
     {
         $methods = get_class_methods($this);
         foreach ($methods as $m) {
