@@ -1,0 +1,18 @@
+; http://www.laruence.com/manual/yaf.config.optional.html
+[common]
+application.directory=APP_PATH "/app/"
+application.bootstrap=APP_PATH "/app/bootstrap/Bootstrap.php"
+
+[routes]
+
+[database]
+db.host=127.0.0.1
+db.port=3306
+db.chaset=utf8mb4
+db.dbname=testDb
+db.user=user
+db.pass=user123456
+
+[product:common:routes:database]
+
+[dev:product]
