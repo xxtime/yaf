@@ -28,6 +28,12 @@ class Bootstrap extends Yaf_Bootstrap_Abstract
         }
     }
 
+    public function _initPlugin(Yaf_Dispatcher $dispatcher)
+    {
+        // $authentication = new AuthenticationPlugin();
+        // $dispatcher->registerPlugin($authentication);
+    }
+
     public function _initDefaultName(Yaf_Dispatcher $dispatcher)
     {
         $dispatcher->setDefaultModule("Index")->setDefaultController("Index")->setDefaultAction("index");
@@ -40,7 +46,7 @@ class Bootstrap extends Yaf_Bootstrap_Abstract
             'path'  => APP_PATH . '/app/views',
             'cache' => APP_PATH . '/storage/cache'
         ];
-        $twig = new ViewsEnginePlugin($config);
+        $twig = new ViewEnginePlugin($config);
         Yaf_Dispatcher::getInstance()->setView($twig);
     }
 

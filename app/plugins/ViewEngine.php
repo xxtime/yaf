@@ -7,7 +7,7 @@
  */
 
 
-class ViewsEnginePlugin implements Yaf_View_Interface
+class ViewEnginePlugin implements Yaf_View_Interface
 {
 
     public $twig;
