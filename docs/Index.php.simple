@@ -10,5 +10,12 @@ class IndexController extends Yaf_Controller_Abstract
     {
         $result = Roles::where('id', '=', 1)->first();
         $result = Capsule::select('select * from mp_roles where id = ?', array(1));
+
+        // $view = $this->getView();
+
+        // $view->assign('name', 'Kate');
+        // $view->display('test/test.html');
+
+        // $view->display('test/test.html', ['name' => 'Joe']);
     }
 }

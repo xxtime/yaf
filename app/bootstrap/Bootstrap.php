@@ -35,7 +35,13 @@ class Bootstrap extends Yaf_Bootstrap_Abstract
 
     public function _initView(Yaf_Dispatcher $dispatcher)
     {
-        // $dispatcher->disableView();
+        $dispatcher->disableView();
+        $config = [
+            'path'  => APP_PATH . '/app/views',
+            'cache' => APP_PATH . '/storage/cache'
+        ];
+        $twig = new ViewsEnginePlugin($config);
+        Yaf_Dispatcher::getInstance()->setView($twig);
     }
 
     public function set($name, $value)

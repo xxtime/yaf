@@ -14,6 +14,7 @@ db.chaset=utf8mb4
 db.dbname=testDb
 db.user=user
 db.pass=user123456
+;db.prefix=cms_
 
 [product:common:routes:database]
 
