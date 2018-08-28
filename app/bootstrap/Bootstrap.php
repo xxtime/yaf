@@ -23,15 +23,14 @@ class Bootstrap extends Yaf_Bootstrap_Abstract
     public function _initRoute(Yaf_Dispatcher $dispatcher)
     {
         $router = Yaf_Dispatcher::getInstance()->getRouter();
-        if (isset($router->routes)) {
+        if (Yaf_Registry::get("config")->routes) {
             $router->addConfig(Yaf_Registry::get("config")->routes);
         }
     }
 
     public function _initPlugin(Yaf_Dispatcher $dispatcher)
     {
-        // $authentication = new AuthenticationPlugin();
-        // $dispatcher->registerPlugin($authentication);
+        // $dispatcher->registerPlugin(new AuthenticationPlugin());
     }
 
     public function _initDefaultName(Yaf_Dispatcher $dispatcher)
